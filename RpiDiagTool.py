@@ -7,24 +7,9 @@ import colorama
 from colorama import Fore, Style #import color to make code results change color
 from tkinter import * #import Tkinter for GUI App
 
-
 #Global Variables
 path = '/'
 
-#Tkinter Variables
-diagwindow = Tk()
-btn = Button(diagwindow, text = "This is a button widget", fg = 'blue')
-lbl = Label(diagwindow, text = "Diskspace Available:", fg = 'black' )
-btn.place(x = 80, y = 100)
-lbl.place(x = 80, y = 50)
-
-#CPU CounterVariables for whileLoop
-cpu_temp_list = [0, 0, 0, 0, 0]
-iterations_count = 0
-time_b4_warning = 5 #5 seconds
-cooldown_time = 10 # in seconds
-cooldown_end = None
-too_hot_temp = 15
 
 def cpu_cores():
     cpu_cores = psutil.cpu_count()
@@ -50,6 +35,26 @@ def memory():
     total = round(memory.total/1024.0/1024.0,1)
     return str(available) + "MB free / " + str(total) + "MB total (" + str(memory.percent) + "%)"
 
+
+#Tkinter Variables
+diagwindow = Tk()
+btn = Button(diagwindow, text = "This is a button widget", fg = 'blue')
+lbl = Label(diagwindow, text = "Diskspace Available:", fg = 'black')
+btn.place(x = 80, y = 100)
+lbl.place(x = 80, y = 50)
+
+
+#CPU CounterVariables for whileLoop
+cpu_temp_list = [0, 0, 0, 0, 0]
+iterations_count = 0
+time_b4_warning = 5 #5 seconds
+cooldown_time = 10 # in seconds
+cooldown_end = None
+too_hot_temp = 15
+
+def cpu_cores():
+    cpu_cores = psutil.cpu_count()
+    return cpu_cores
 
 
 print("Diskspace Available:", gigabytes_avail(),"/32GB")
