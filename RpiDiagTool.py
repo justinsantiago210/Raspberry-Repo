@@ -9,7 +9,8 @@ from tkinter import * #import Tkinter for GUI App
 
 #Global Variables
 path = '/'
-
+cpu_temp = psutil.sensors_temperatures()
+#current_temp = cpu_temp.
 
 def cpu_cores():
     cpu_cores = psutil.cpu_count()
@@ -61,6 +62,8 @@ print("Diskspace Available:", gigabytes_avail(),"/32GB")
 print("Number of CPU Cores:", cpu_cores())
 print("Systemwide CPU Usage as of now:",cpu_usage(),"/100%" )
 print("RAM Usage:", memory())
+print("CPU Temp: ", cpu_temp)
+#print("CPU Temp: ", current_temp)
 
 #Build Tkinter Window
 diagwindow.title("RPi System Diag")
