@@ -1,14 +1,22 @@
 # Write your code here :-)
 # imports as usual
-import psutil
+import psutil #Util to get System Diag and Web Statistics
 from time import sleep
 from time import time
 import colorama
-from colorama import Fore, Style
+from colorama import Fore, Style #import color to make code results change color
+from tkinter import * #import Tkinter for GUI App
 
 
 #Global Variables
 path = '/'
+
+#Tkinter Variables
+diagwindow = Tk()
+btn = Button(diagwindow, text = "This is a button widget", fg = 'blue')
+lbl = Label(diagwindow, text = "Diskspace Available:", fg = 'black' )
+btn.place(x = 80, y = 100)
+lbl.place(x = 80, y = 50)
 
 #CPU CounterVariables for whileLoop
 cpu_temp_list = [0, 0, 0, 0, 0]
@@ -48,6 +56,11 @@ print("Diskspace Available:", gigabytes_avail(),"/32GB")
 print("Number of CPU Cores:", cpu_cores())
 print("Systemwide CPU Usage as of now:",cpu_usage(),"/100%" )
 print("RAM Usage:", memory())
+
+#Build Tkinter Window
+diagwindow.title("RPi System Diag")
+diagwindow.geometry("300x200+10+20")
+diagwindow.mainloop()
 
 
 #print CPULoad per 1second
