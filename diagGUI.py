@@ -1,6 +1,8 @@
 from tkinter import * #import Tkinter for GUI App
 from tkinter.ttk import Combobox
 
+
+
 #Functions
 def printOne(self):
     return print("This is the number one")
@@ -10,7 +12,7 @@ diagwindow = Tk()
 var = StringVar()
 var.set("one")
 data = ["one", "two", "three", "four"]
-btn = Button(diagwindow, text = "This is a button widget", fg = 'blue', command=self.printOne)
+btn = Button(diagwindow, text = "This is a button widget", fg = 'blue')
 lbl = Label(diagwindow, text = "Diskspace Available:", fg = 'black' )
 txtfld = Entry(diagwindow, text = "Entry Widget", bg = 'white', fg = 'black', bd = 5)
 cb = Combobox(diagwindow, values = data)
