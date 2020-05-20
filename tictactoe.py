@@ -1,6 +1,8 @@
-from random import choice
+from random import choice #import statements
 
 
+#define functions in class
+#class runs once so main logic needs to be in a functions
 
 class TicTacToe:
     def __init__(self):
@@ -33,6 +35,7 @@ class TicTacToe:
                 break
     print("Thanks for playing! We have left the loop.")
 
+#used to run functions
 if __name__ == '__main__':
     mainClass = TicTacToe()
     mainClass.printBoard()
